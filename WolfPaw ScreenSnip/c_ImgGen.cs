@@ -262,7 +262,44 @@ namespace WolfPaw_ScreenSnip
 
 				Bitmap _b = createImage(picrec, cutouts, drawTBG);
 
-				//TODO: Add line handling
+				//TODO: Redo this. drawnpoints instead of lines
+				//TODO: New object type instead of Bitmaps
+				if (drawings != null && drawings.Length == 2)
+				{
+					List<c_DrawnPoints> lines = drawings[0] as List<c_DrawnPoints>;
+					//List<Bitmap> shapes = drawings[1] as List<Bitmap>;
+
+					if (lines.Count > 0)
+
+						try
+						{
+							using (Graphics g = Graphics.FromImage(_b))
+							{
+
+								for (int i = 0; i < lines.Count - 2; i++)
+								{
+									c_DrawnPoints l = lines[i];
+									c_DrawnPoints l2 = lines[i + 1];
+
+									Point p1 = new Point(l.X, l.Y);
+									Point p2 = new Point(l2.X, l2.Y);
+
+									g.DrawLine(Pens.Black, p1, p2);
+								}
+								/*
+								foreach (Bitmap b in shapes)
+								{
+									g.DrawImage(b, new PointF(0, 0));
+								}
+								*/
+							}
+						}
+						catch
+						{
+
+						}
+
+				}
 
 				return _b;
 			}
@@ -270,9 +307,42 @@ namespace WolfPaw_ScreenSnip
 		}
 
 
+		public static void fillDict(f_Screen fs,out Dictionary<int, uc_CutoutHolder> cutouts)
+		{
+			cutouts = new Dictionary<int, uc_CutoutHolder>();
+			foreach (var v in fs.Controls)
+			{
+				if (v != null && v is uc_CutoutHolder)
+				{
+					int i = fs.Controls.GetChildIndex(((uc_CutoutHolder)v));
+					if (!cutouts.ContainsKey(i))
+					{
+						cutouts.Add(i, ((uc_CutoutHolder)v));
+					}
+				}
+			}
 
+			//TODO:This SORTS cutouts
+			cutouts = cutouts.OrderByDescending(r => r.Key).ToDictionary(r => r.Key, r => r.Value);
+		}
 
-		
+		public static Dictionary<int, uc_CutoutHolder> returnCutouts(f_Screen fs)
+		{
+			Dictionary<int, uc_CutoutHolder> c = new Dictionary<int, uc_CutoutHolder>();
+			foreach (var v in fs.Controls)
+			{
+				if (v != null && v is uc_CutoutHolder)
+				{
+					int i = fs.Controls.GetChildIndex(((uc_CutoutHolder)v));
+					if (!c.ContainsKey(i))
+					{
+						c.Add(i, ((uc_CutoutHolder)v));
+					}
+				}
+			}
+			return c;
+		}
+
 	}
 
 

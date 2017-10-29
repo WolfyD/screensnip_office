@@ -217,6 +217,18 @@ namespace WolfPaw_ScreenSnip.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string s_BACKCOLOR {
+            get {
+                return ((string)(this["s_BACKCOLOR"]));
+            }
+            set {
+                this["s_BACKCOLOR"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool s_SaveHasDateTime {
             get {
@@ -236,6 +248,18 @@ namespace WolfPaw_ScreenSnip.Properties {
             }
             set {
                 this["s_BaseDelay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int s_Delay {
+            get {
+                return ((int)(this["s_Delay"]));
+            }
+            set {
+                this["s_Delay"] = value;
             }
         }
         
@@ -301,6 +325,18 @@ namespace WolfPaw_ScreenSnip.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        public int s_HandleSize {
+            get {
+                return ((int)(this["s_HandleSize"]));
+            }
+            set {
+                this["s_HandleSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int s_ToolbarPanel {
             get {
@@ -314,12 +350,36 @@ namespace WolfPaw_ScreenSnip.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool s_InvalidateTools {
+            get {
+                return ((bool)(this["s_InvalidateTools"]));
+            }
+            set {
+                this["s_InvalidateTools"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool s_handlePrintScreen {
             get {
                 return ((bool)(this["s_handlePrintScreen"]));
             }
             set {
                 this["s_handlePrintScreen"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool s_MoveToTools {
+            get {
+                return ((bool)(this["s_MoveToTools"]));
+            }
+            set {
+                this["s_MoveToTools"] = value;
             }
         }
         
@@ -380,271 +440,6 @@ namespace WolfPaw_ScreenSnip.Properties {
             }
             set {
                 this["s_LastUsedMode"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool s_HandleShortcuts {
-            get {
-                return ((bool)(this["s_HandleShortcuts"]));
-            }
-            set {
-                this["s_HandleShortcuts"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Gainsboro")]
-        public global::System.Drawing.Color s_ScreenBGColor {
-            get {
-                return ((global::System.Drawing.Color)(this["s_ScreenBGColor"]));
-            }
-            set {
-                this["s_ScreenBGColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("ActiveCaption")]
-        public global::System.Drawing.Color s_CutoutPanelColor {
-            get {
-                return ((global::System.Drawing.Color)(this["s_CutoutPanelColor"]));
-            }
-            set {
-                this["s_CutoutPanelColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        public global::System.Drawing.Color s_CutoutSelectionColor {
-            get {
-                return ((global::System.Drawing.Color)(this["s_CutoutSelectionColor"]));
-            }
-            set {
-                this["s_CutoutSelectionColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("180, 180, 180")]
-        public global::System.Drawing.Color s_CutoutMouseOverColor {
-            get {
-                return ((global::System.Drawing.Color)(this["s_CutoutMouseOverColor"]));
-            }
-            set {
-                this["s_CutoutMouseOverColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool s_ShowPreview {
-            get {
-                return ((bool)(this["s_ShowPreview"]));
-            }
-            set {
-                this["s_ShowPreview"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int s_LastPreviewMode {
-            get {
-                return ((int)(this["s_LastPreviewMode"]));
-            }
-            set {
-                this["s_LastPreviewMode"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool s_AllowDragaround {
-            get {
-                return ((bool)(this["s_AllowDragaround"]));
-            }
-            set {
-                this["s_AllowDragaround"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool s_DragaroundX {
-            get {
-                return ((bool)(this["s_DragaroundX"]));
-            }
-            set {
-                this["s_DragaroundX"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool s_DragaroundY {
-            get {
-                return ((bool)(this["s_DragaroundY"]));
-            }
-            set {
-                this["s_DragaroundY"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" />")]
-        public global::System.Collections.Specialized.StringCollection s_DPI {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["s_DPI"]));
-            }
-            set {
-                this["s_DPI"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int s_DPIType {
-            get {
-                return ((int)(this["s_DPIType"]));
-            }
-            set {
-                this["s_DPIType"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int s_UseMonitorForDpi {
-            get {
-                return ((int)(this["s_UseMonitorForDpi"]));
-            }
-            set {
-                this["s_UseMonitorForDpi"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool s_DrawCrosshairs {
-            get {
-                return ((bool)(this["s_DrawCrosshairs"]));
-            }
-            set {
-                this["s_DrawCrosshairs"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool s_DrawPosiData {
-            get {
-                return ((bool)(this["s_DrawPosiData"]));
-            }
-            set {
-                this["s_DrawPosiData"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool s_DrawRulerBackground {
-            get {
-                return ((bool)(this["s_DrawRulerBackground"]));
-            }
-            set {
-                this["s_DrawRulerBackground"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool s_AlwaysHaveRuler {
-            get {
-                return ((bool)(this["s_AlwaysHaveRuler"]));
-            }
-            set {
-                this["s_AlwaysHaveRuler"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("20")]
-        public int s_HandleSize {
-            get {
-                return ((int)(this["s_HandleSize"]));
-            }
-            set {
-                this["s_HandleSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int s_Delay {
-            get {
-                return ((int)(this["s_Delay"]));
-            }
-            set {
-                this["s_Delay"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool s_MoveToTools {
-            get {
-                return ((bool)(this["s_MoveToTools"]));
-            }
-            set {
-                this["s_MoveToTools"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string s_QuickSaveDir {
-            get {
-                return ((string)(this["s_QuickSaveDir"]));
-            }
-            set {
-                this["s_QuickSaveDir"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string s_SaveToTable {
-            get {
-                return ((string)(this["s_SaveToTable"]));
-            }
-            set {
-                this["s_SaveToTable"] = value;
             }
         }
     }

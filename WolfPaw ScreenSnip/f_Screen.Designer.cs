@@ -52,15 +52,8 @@
 			this.p_BgColor = new System.Windows.Forms.Panel();
 			this.r_BgColor = new System.Windows.Forms.RadioButton();
 			this.r_BgTransparent = new System.Windows.Forms.RadioButton();
-			this.cms_Panel = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.cms_btn_Resize = new System.Windows.Forms.ToolStripMenuItem();
-			this.cms_btn_Fit = new System.Windows.Forms.ToolStripMenuItem();
-			this.cms_btn_LayerUp = new System.Windows.Forms.ToolStripMenuItem();
-			this.cms_btn_LayerDown = new System.Windows.Forms.ToolStripMenuItem();
-			this.cms_btn_EditImage = new System.Windows.Forms.ToolStripMenuItem();
-			this.cms_btn_Save = new System.Windows.Forms.ToolStripMenuItem();
-			this.cms_btn_Copy = new System.Windows.Forms.ToolStripMenuItem();
-			this.cms_btn_Delete = new System.Windows.Forms.ToolStripMenuItem();
+			this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+			this.el_EditLayer1 = new WolfPaw_ScreenSnip.uc_WpfEditLayer();
 			this.ts_Tools = new WolfPaw_ScreenSnip.myToolstrip();
 			this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
 			this.btn_ToolSelector = new FontAwesome.Sharp.IconDropDownButton();
@@ -90,11 +83,6 @@
 			this.btn_ToolWindow = new FontAwesome.Sharp.IconToolStripButton();
 			this.btn_ToolPanel = new FontAwesome.Sharp.IconToolStripButton();
 			this.p_Tools = new WolfPaw_ScreenSnip.myPanel();
-			this.trackBar = new WolfPaw_ScreenSnip.uc_TrackBar();
-			this.lbl_Opacity = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
-			this.cb_Transparent = new System.Windows.Forms.CheckBox();
-			this.label9 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
@@ -105,7 +93,6 @@
 			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.num_ToolSize)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.num_Border)).BeginInit();
-			this.cms_Panel.SuspendLayout();
 			this.ts_Tools.SuspendLayout();
 			this.p_Tools.SuspendLayout();
 			this.SuspendLayout();
@@ -141,7 +128,7 @@
 			this.btn_ToolStrip.IconColor = System.Drawing.Color.Black;
 			this.btn_ToolStrip.IconSize = 32;
 			this.btn_ToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("btn_ToolStrip.Image")));
-			this.btn_ToolStrip.Location = new System.Drawing.Point(130, 525);
+			this.btn_ToolStrip.Location = new System.Drawing.Point(130, 571);
 			this.btn_ToolStrip.Name = "btn_ToolStrip";
 			this.btn_ToolStrip.Size = new System.Drawing.Size(32, 32);
 			this.btn_ToolStrip.TabIndex = 52;
@@ -158,7 +145,7 @@
 			this.btn_Dock.IconColor = System.Drawing.Color.Black;
 			this.btn_Dock.IconSize = 32;
 			this.btn_Dock.Image = ((System.Drawing.Image)(resources.GetObject("btn_Dock.Image")));
-			this.btn_Dock.Location = new System.Drawing.Point(165, 525);
+			this.btn_Dock.Location = new System.Drawing.Point(165, 571);
 			this.btn_Dock.Name = "btn_Dock";
 			this.btn_Dock.Size = new System.Drawing.Size(32, 32);
 			this.btn_Dock.TabIndex = 52;
@@ -424,81 +411,16 @@
 			this.r_BgTransparent.UseVisualStyleBackColor = true;
 			this.r_BgTransparent.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btn_Dock_PreviewKeyDown);
 			// 
-			// cms_Panel
+			// elementHost1
 			// 
-			this.cms_Panel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cms_btn_Resize,
-            this.cms_btn_Fit,
-            this.cms_btn_LayerUp,
-            this.cms_btn_LayerDown,
-            this.cms_btn_EditImage,
-            this.cms_btn_Save,
-            this.cms_btn_Copy,
-            this.cms_btn_Delete});
-			this.cms_Panel.Name = "cms_Panel";
-			this.cms_Panel.Size = new System.Drawing.Size(137, 180);
-			// 
-			// cms_btn_Resize
-			// 
-			this.cms_btn_Resize.Image = global::WolfPaw_ScreenSnip.Properties.Resources.full_screen;
-			this.cms_btn_Resize.Name = "cms_btn_Resize";
-			this.cms_btn_Resize.Size = new System.Drawing.Size(136, 22);
-			this.cms_btn_Resize.Text = "Resize";
-			this.cms_btn_Resize.Click += new System.EventHandler(this.cms_btn_Resize_Click);
-			// 
-			// cms_btn_Fit
-			// 
-			this.cms_btn_Fit.Name = "cms_btn_Fit";
-			this.cms_btn_Fit.Size = new System.Drawing.Size(136, 22);
-			this.cms_btn_Fit.Text = "Fit";
-			this.cms_btn_Fit.Click += new System.EventHandler(this.cms_btn_Fit_Click);
-			// 
-			// cms_btn_LayerUp
-			// 
-			this.cms_btn_LayerUp.Image = global::WolfPaw_ScreenSnip.Properties.Resources.up;
-			this.cms_btn_LayerUp.Name = "cms_btn_LayerUp";
-			this.cms_btn_LayerUp.Size = new System.Drawing.Size(136, 22);
-			this.cms_btn_LayerUp.Text = "Layer Up";
-			this.cms_btn_LayerUp.Click += new System.EventHandler(this.cms_btn_LayerUp_Click);
-			// 
-			// cms_btn_LayerDown
-			// 
-			this.cms_btn_LayerDown.Image = global::WolfPaw_ScreenSnip.Properties.Resources.down;
-			this.cms_btn_LayerDown.Name = "cms_btn_LayerDown";
-			this.cms_btn_LayerDown.Size = new System.Drawing.Size(136, 22);
-			this.cms_btn_LayerDown.Text = "Layer Down";
-			this.cms_btn_LayerDown.Click += new System.EventHandler(this.cms_btn_LayerDown_Click);
-			// 
-			// cms_btn_EditImage
-			// 
-			this.cms_btn_EditImage.Name = "cms_btn_EditImage";
-			this.cms_btn_EditImage.Size = new System.Drawing.Size(136, 22);
-			this.cms_btn_EditImage.Text = "Edit Image";
-			this.cms_btn_EditImage.Click += new System.EventHandler(this.cms_btn_EditImage_Click);
-			// 
-			// cms_btn_Save
-			// 
-			this.cms_btn_Save.Image = global::WolfPaw_ScreenSnip.Properties.Resources.save_20;
-			this.cms_btn_Save.Name = "cms_btn_Save";
-			this.cms_btn_Save.Size = new System.Drawing.Size(136, 22);
-			this.cms_btn_Save.Text = "Save";
-			this.cms_btn_Save.Click += new System.EventHandler(this.cms_btn_Save_Click);
-			// 
-			// cms_btn_Copy
-			// 
-			this.cms_btn_Copy.Image = global::WolfPaw_ScreenSnip.Properties.Resources.clipboard_20;
-			this.cms_btn_Copy.Name = "cms_btn_Copy";
-			this.cms_btn_Copy.Size = new System.Drawing.Size(136, 22);
-			this.cms_btn_Copy.Text = "Copy";
-			this.cms_btn_Copy.Click += new System.EventHandler(this.cms_btn_Copy_Click);
-			// 
-			// cms_btn_Delete
-			// 
-			this.cms_btn_Delete.Image = global::WolfPaw_ScreenSnip.Properties.Resources.trashcan;
-			this.cms_btn_Delete.Name = "cms_btn_Delete";
-			this.cms_btn_Delete.Size = new System.Drawing.Size(136, 22);
-			this.cms_btn_Delete.Text = "Delete";
-			this.cms_btn_Delete.Click += new System.EventHandler(this.cms_btn_Delete_Click);
+			this.elementHost1.BackColorTransparent = true;
+			this.elementHost1.Location = new System.Drawing.Point(0, 0);
+			this.elementHost1.Name = "elementHost1";
+			this.elementHost1.Size = new System.Drawing.Size(62, 90);
+			this.elementHost1.TabIndex = 3;
+			this.elementHost1.Text = "elementHost1";
+			this.elementHost1.Visible = false;
+			this.elementHost1.Child = this.el_EditLayer1;
 			// 
 			// ts_Tools
 			// 
@@ -778,11 +700,6 @@
 			// p_Tools
 			// 
 			this.p_Tools.BackColor = System.Drawing.SystemColors.Control;
-			this.p_Tools.Controls.Add(this.trackBar);
-			this.p_Tools.Controls.Add(this.lbl_Opacity);
-			this.p_Tools.Controls.Add(this.label10);
-			this.p_Tools.Controls.Add(this.cb_Transparent);
-			this.p_Tools.Controls.Add(this.label9);
 			this.p_Tools.Controls.Add(this.label7);
 			this.p_Tools.Controls.Add(this.btn_Manipulate);
 			this.p_Tools.Controls.Add(this.btn_ToolStrip);
@@ -814,58 +731,8 @@
 			this.p_Tools.Dock = System.Windows.Forms.DockStyle.Right;
 			this.p_Tools.Location = new System.Drawing.Point(926, 0);
 			this.p_Tools.Name = "p_Tools";
-			this.p_Tools.Size = new System.Drawing.Size(200, 560);
+			this.p_Tools.Size = new System.Drawing.Size(200, 606);
 			this.p_Tools.TabIndex = 0;
-			// 
-			// trackBar
-			// 
-			this.trackBar.HandleColor = System.Drawing.Color.DarkOliveGreen;
-			this.trackBar.Location = new System.Drawing.Point(93, 307);
-			this.trackBar.Max = 10D;
-			this.trackBar.Min = 1D;
-			this.trackBar.Name = "trackBar";
-			this.trackBar.Size = new System.Drawing.Size(66, 25);
-			this.trackBar.Style = WolfPaw_ScreenSnip.uc_TrackBar.style.emptyCircle;
-			this.trackBar.TabIndex = 60;
-			this.trackBar.Val = 5D;
-			this.trackBar.OnValueChange += new WolfPaw_ScreenSnip.uc_TrackBar.ValueChanged(this.TrackBar_OnValueChange);
-			// 
-			// lbl_Opacity
-			// 
-			this.lbl_Opacity.AutoSize = true;
-			this.lbl_Opacity.Location = new System.Drawing.Point(165, 311);
-			this.lbl_Opacity.Name = "lbl_Opacity";
-			this.lbl_Opacity.Size = new System.Drawing.Size(22, 13);
-			this.lbl_Opacity.TabIndex = 59;
-			this.lbl_Opacity.Text = "0.4";
-			// 
-			// label10
-			// 
-			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(16, 311);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(75, 13);
-			this.label10.TabIndex = 58;
-			this.label10.Text = "Transparency:";
-			// 
-			// cb_Transparent
-			// 
-			this.cb_Transparent.AutoSize = true;
-			this.cb_Transparent.Location = new System.Drawing.Point(114, 291);
-			this.cb_Transparent.Name = "cb_Transparent";
-			this.cb_Transparent.Size = new System.Drawing.Size(15, 14);
-			this.cb_Transparent.TabIndex = 56;
-			this.cb_Transparent.UseVisualStyleBackColor = true;
-			this.cb_Transparent.CheckedChanged += new System.EventHandler(this.cb_Transparent_CheckedChanged);
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(4, 291);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(104, 13);
-			this.label9.TabIndex = 55;
-			this.label9.Text = "Transparent Images:";
 			// 
 			// label7
 			// 
@@ -949,7 +816,8 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Gainsboro;
-			this.ClientSize = new System.Drawing.Size(1126, 560);
+			this.ClientSize = new System.Drawing.Size(1126, 606);
+			this.Controls.Add(this.elementHost1);
 			this.Controls.Add(this.ts_Tools);
 			this.Controls.Add(this.p_Tools);
 			this.DoubleBuffered = true;
@@ -963,14 +831,12 @@
 			this.DragEnter += new System.Windows.Forms.DragEventHandler(this.f_Screen_DragEnter);
 			this.DragOver += new System.Windows.Forms.DragEventHandler(this.f_Screen_DragOver);
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f_Screen_KeyDown);
-			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.f_Screen_KeyUp);
 			this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.f_Screen_MouseClick);
 			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.f_Screen_MouseDown);
 			this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.f_Screen_MouseMove);
 			this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.f_Screen_MouseUp);
 			((System.ComponentModel.ISupportInitialize)(this.num_ToolSize)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.num_Border)).EndInit();
-			this.cms_Panel.ResumeLayout(false);
 			this.ts_Tools.ResumeLayout(false);
 			this.ts_Tools.PerformLayout();
 			this.p_Tools.ResumeLayout(false);
@@ -1039,20 +905,8 @@
 		private myPanel p_Tools;
 		private System.Windows.Forms.ToolTip tt_Main;
 		private FontAwesome.Sharp.IconToolStripButton cb_Background;
+		private System.Windows.Forms.Integration.ElementHost elementHost1;
+		private uc_WpfEditLayer el_EditLayer1;
 		private myToolstrip ts_Tools;
-		private System.Windows.Forms.ContextMenuStrip cms_Panel;
-		private System.Windows.Forms.ToolStripMenuItem cms_btn_Resize;
-		private System.Windows.Forms.ToolStripMenuItem cms_btn_Fit;
-		private System.Windows.Forms.ToolStripMenuItem cms_btn_LayerUp;
-		private System.Windows.Forms.ToolStripMenuItem cms_btn_LayerDown;
-		private System.Windows.Forms.ToolStripMenuItem cms_btn_EditImage;
-		private System.Windows.Forms.ToolStripMenuItem cms_btn_Save;
-		private System.Windows.Forms.ToolStripMenuItem cms_btn_Copy;
-		private System.Windows.Forms.ToolStripMenuItem cms_btn_Delete;
-		private System.Windows.Forms.Label lbl_Opacity;
-		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.CheckBox cb_Transparent;
-		private System.Windows.Forms.Label label9;
-		private uc_TrackBar trackBar;
 	}
 }
